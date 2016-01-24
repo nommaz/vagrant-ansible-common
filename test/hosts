@@ -1,0 +1,31 @@
+frpve01 	ansible_ssh_host=192.168.4.1
+frossec01	ansible_ssh_host=192.168.4.101
+frsql01		ansible_ssh_host=192.168.4.150
+frsql02		ansible_ssh_host=192.168.4.151
+frrepo01	ansible_ssh_host=192.168.4.120
+frrepo02	ansible_ssh_host=192.168.4.121
+
+[pveservers]
+frpve01
+
+[ossecservers]
+frossec01
+
+[dbservers]
+frsql01
+frsql02
+
+[reposervers]
+frrepo01
+frrepo02
+
+[all:vars]
+ntp_server=192.168.4.1
+ossec_server=192.168.4.101
+apt_cacher_ip=192.168.4.100
+
+[all:children]
+pveservers
+ossecservers
+dbservers
+reposervers
