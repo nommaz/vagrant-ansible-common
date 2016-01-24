@@ -1,6 +1,11 @@
 ---
 # tasks file for ossec-role
-  
+
+- name: ensure build tools is installed to compile ossec
+  apt: name={{ item }} update_cache=yes cache_valid_time=18000
+  with_items:
+    - build-essential
+    
 - name: Stop Ossec
   command: "/var/ossec/bin/ossec-control stop"
   ignore_errors: yes
@@ -27,5 +32,5 @@
 - name: Compile and install OSSEC
   command: "{{ ossec_dl_dest }}/ossec-hids-{{ ossec_version }}/install.sh        
             chdir={{ ossec_dl_dest }}/ossec-hids-{{ ossec_version }}"
-    
+
   notify: start ossec
