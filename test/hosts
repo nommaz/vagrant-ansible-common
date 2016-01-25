@@ -21,7 +21,7 @@ frrepo02
 
 [all:vars]
 ntp_server=192.168.4.1
-ossec_server=192.168.4.101
+ossec_server_ip=192.168.4.101
 apt_cacher_ip=192.168.4.100
 
 [all:children]

@@ -46,12 +46,6 @@
   notify:
    - reload nginx
   tags: [configuration,nginx]
-  
-- name: Add pamd file for login support
-  copy: src="{{ item }}" dest=/etc/pam.d/{{ item }} owner=root group=root
-  with_items:
-    - "login"
-    - "nginx"
 
 - name: ensure ufw is running with nginx port allowed
   service: name=ufw state=started enabled=yes
