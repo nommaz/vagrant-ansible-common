@@ -9,12 +9,11 @@
     #must be var'ed better
     
   - name: Set hostname
-    hostname: name={{ hugin_hostname }}
+    hostname: name={{ inventory_hostname }}
 
   - name: Add hostname to hosts
-    lineinfile: "dest=/etc/hosts state=present regexp='^127.0.1.1' line='127.0.1.1       {{ hugin_hostname }}'"
-  
-        
+    lineinfile: "dest=/etc/hosts state=present regexp='^127.0.1.1' line='127.0.1.1       {{ inventory_hostname }}'"
+    
   - name: ensure common packages are installed
     apt: name={{ item }} update_cache=yes cache_valid_time=18000
     with_items:
