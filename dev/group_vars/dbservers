@@ -1,0 +1,17 @@
+# List of databases to be created (optional)
+mysql_databases:
+  - name: tps
+    collation: "utf8_general_ci"        # optional, defaults to "utf8_general_ci"
+    encoding: "utf8"                    # optional, defaults to "utf8"
+
+# GLOBAL Setting
+monit_protection: false                 # true or false, requires ANXS.monit
+
+mysql_default_root_password: CHANGEME
+mysql_root_password: root123
+
+# List of users to be created (optional)
+mysql_users:
+  - name: <user>
+    pass: <password>
+    host: "%"

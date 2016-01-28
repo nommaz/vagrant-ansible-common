@@ -1,27 +1,28 @@
-pve01 	ansible_ssh_host=192.168.0.235
-ossec	ansible_ssh_host=192.168.0.200
-sql01	ansible_ssh_host=192.168.0.210
-sql02	ansible_ssh_host=192.168.0.211
-repo	ansible_ssh_host=192.168.0.220
+pve01 		ansible_ssh_host=192.168.0.235
+devossec01	ansible_ssh_host=192.168.0.201
+devsql01	ansible_ssh_host=192.168.0.215
+devsql02	ansible_ssh_host=192.168.0.216
+devrepo01	ansible_ssh_host=192.168.0.210
+devrepo02	ansible_ssh_host=192.168.0.211
 
 [pveservers]
 pve01
 
 [ossecservers]
-ossec
+devossec01
 
 [dbservers]
-sql01
-sql02
+devsql01
+#devsql02
 
 [reposervers]
-repo01
-repo02
+devrepo01
+#devrepo02
 
 [all:vars]
-ntp_server=192.168.0.235
-ossec_server=192.168.0.200
-apt_cacher_ip=192.168.4.201
+ntp_server=5.159.255.108
+ossec_server_ip=192.168.0.201
+#apt_cacher_ip=192.168.0.200
 
 [all:children]
 pveservers

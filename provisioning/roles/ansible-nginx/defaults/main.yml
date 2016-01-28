@@ -5,6 +5,7 @@ nginx_redhat_pkg:
 nginx_ubuntu_pkg:
   - python-selinux
   - nginx
+  - nginx-extras
 
 nginx_freebsd_pkg:
   - nginx

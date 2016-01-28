@@ -1,1 +1,5 @@
 ---
+ossec_alert_email_address : hugintsm.alert@gmail.com
+ossec_tld : tsm.hugin.com.tr
+ossec_alert_email_relayhost : smtp.gmail.com:587
+#ossec_alert_email_password : <password>
