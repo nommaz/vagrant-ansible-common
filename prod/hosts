@@ -1,28 +1,40 @@
-frpve01 	ansible_ssh_host=192.168.4.1
-frossec01	ansible_ssh_host=192.168.4.101
-frsql01		ansible_ssh_host=192.168.4.150
-frsql02		ansible_ssh_host=192.168.4.151
-frrepo01	ansible_ssh_host=192.168.4.120
-frrepo02	ansible_ssh_host=192.168.4.121
+istpve01 	ansible_ssh_host=172.25.2.70
+istpve02 	ansible_ssh_host=172.25.2.71
+istjbs01 	ansible_ssh_host=172.25.2.10
+istjbs02 	ansible_ssh_host=172.25.2.20
+istjbs03 	ansible_ssh_host=172.25.2.30
+istjbs04 	ansible_ssh_host=172.25.2.40
+istossec01	ansible_ssh_host=172.25.2.81
+istsql01	ansible_ssh_host=172.25.2.140
+istsql02	ansible_ssh_host=172.25.2.150
+istrepo01	ansible_ssh_host=172.25.2.100
+istrepo02	ansible_ssh_host=172.25.2.101
 
 [pveservers]
-frpve01
+istpve01
+istpve02
+
+[jbsservers]
+istjbs01
+istjbs02
+istjbs03
+istjbs04
 
 [ossecservers]
-frossec01
+istossec01
 
 [dbservers]
-frsql01
-frsql02
+istsql01
+istsql02
 
 [reposervers]
-frrepo01
-frrepo02
+#istrepo01
+istrepo02
 
 [all:vars]
-ntp_server=192.168.4.1
-ossec_server=192.168.4.101
-apt_cacher_ip=192.168.4.100
+ntp_server=172.30.254.110
+ossec_server_ip=172.25.2.81
+#apt_cacher_ip=192.168.4.100
 
 [all:children]
 pveservers
